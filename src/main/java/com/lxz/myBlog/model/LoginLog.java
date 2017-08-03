@@ -29,7 +29,7 @@ public class LoginLog {
 
     public String getIp() {
         return ip;
-    }
+    }0
 
     public void setIp(String ip) {
         this.ip = ip;

@@ -20,7 +20,7 @@ public class userService {
     @Autowired
     private LoginLogMapper LoginLogMapper;
 
-    public boolean hasMathUser(String userName,String pssword) {
+    public boolean hasMatchUser(String userName,String pssword) {
         int matchCount = userMapper.getMatchCount(userName,pssword);
         return matchCount > 0;
     }
@@ -43,7 +43,7 @@ public class userService {
 
     @Transactional
     public boolean tryLogin(String userName,String pssword){
-        if (hasMathUser(userName,pssword)) {
+        if (hasMatchUser(userName,pssword)) {
             User user = findUserByUserName(userName);
             loginSuccess(user);
             return true;
